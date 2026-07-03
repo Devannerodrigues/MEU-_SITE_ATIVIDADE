@@ -1,0 +1,200 @@
+/* seletor coringa que atribui caracteristicas a todos elementos*/ 
+*{ 
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: roboto;
+} 
+
+/* criando uma variavel no css*/
+:root{
+    --cor_principal: #8373b7;
+    --cor_botao01: #44a4b7;
+    --cor_lnk_menu: #324c7d;
+    --cor_vermelha: #58c271;
+}
+
+/* tag main*/
+#geral{
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* cabecalho, header do site*/
+
+#cabecalho{
+    width: 100%;
+    height: 200px;
+    background-color: #4d2a8d;
+    padding: 5px 100px;
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* alterando as caracteristicas da imagem logo*/
+#logo img{
+    width: 250px;
+    height: 160px;
+}
+
+/* alterando a tag nav pelo id*/
+#menu{
+    width: 300px;
+    height: 160px;
+    color: #8373b7;
+    display: flex;
+    align-items:center;
+    justify-content: center; 
+}
+/*alterando as imagens de icones pela div e elemento img*/
+#div-icones img {
+    width: 70px;
+    height: 60px;
+}
+
+/* formatando os menus*/
+#menu a:link{
+    font-size: 1.3em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--cor_lnk_menu)
+}
+
+#menu a:visited{
+    font-size: 1.3em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--cor_lnk_menu)
+}
+
+#menu a:hover{
+    font-size: 1.6em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--cor_botao01)
+}
+
+#menu a:active{
+    font-size: 1.3em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--cor_vermelha)
+}
+/* formatação dos cards*/ 
+
+    #cards{   
+        width: 1000px;
+        min-height: 600px;
+        margin: 20px 0px;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        
+    }
+
+    .card{
+        width: 250px;
+        min-height: 250px;
+        border: solid 1px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card:hover{
+    transform: translateY(-5px);
+    transition: 0.3s;    
+    }
+
+
+    .card h2{
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 10px 0px;
+    }
+
+    .card h3{
+        margin: 20px 0px;   
+    }
+
+    .card button{
+        width: 100%;
+        height: 45px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        border: none;
+        background-color: var(--cor_lnk_menu);
+        cursor: pointer;
+    }
+
+    .card img{
+        width: 100%;
+        height: 250px;
+    }
+
+    /* formatação do rodapé*/ 
+
+    #rodape{
+        width: 100%;
+        height: 300px;
+        background-color: var(--cor_vermelha);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }    
+
+    #dadosloja{
+        font-size: 0.8em;
+    }
+
+    #icones_sociais ul {
+        list-style: none;
+    }
+
+    #icones_sociais img{
+        width: 25px;
+        height: 25px;
+        margin-left: 50px;
+    }
+
+    #div-cartoes img{
+        width: 25px;
+        height: 25px;
+    }
+
+    .logo{
+    width:180px;
+    display:block;
+    margin:auto;
+    }
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    align-items: center;
+}
+
+.produto{
+    width:250px;
+    text-decoration: solid;
+    background:#fff;
+    border-radius:15px;
+    padding:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+.produto img{
+    width: 100%;
+    height: 150px;
+    object-fit:cover;
+    border-radius: 15px;
+}
