@@ -1,200 +1,242 @@
-/* seletor coringa que atribui caracteristicas a todos elementos*/ 
-*{ 
-    margin: 0px;
-    padding: 0px;
+/* =========================================
+   1. Reset Básico e Variáveis
+   ========================================= */
+:root {
+    --cor_principal: #502d79; /* Roxo principal atualizado */
+    --cor_secundaria: #8373b7; /* Roxo mais claro (cards e botões) */
+    --cor_destaque: #44a4b7; /* Azul/Ciano para hover */
+    --cor_fundo: #f8f8f8;
+    --cor_texto: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: roboto;
-} 
-
-/* criando uma variavel no css*/
-:root{
-    --cor_principal: #8373b7;
-    --cor_botao01: #44a4b7;
-    --cor_lnk_menu: #324c7d;
-    --cor_vermelha: #58c271;
 }
 
-/* tag main*/
-#geral{
-    margin: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    background-color: var(--cor_fundo);
+    color: var(--cor_texto);
+    line-height: 1.6;
 }
-/* cabecalho, header do site*/
 
-#cabecalho{
+/* =========================================
+   2. Cabeçalho e Logo
+   ========================================= */
+#cabecalho {
     width: 100%;
-    height: 200px;
-    background-color: #4d2a8d;
-    padding: 5px 100px;
-    margin: 20px 0px;
+    background-color: var(--cor_principal);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 50px;
 }
 
-/* alterando as caracteristicas da imagem logo*/
-#logo img{
-    width: 250px;
-    height: 160px;
+/* Controle do tamanho da logo no cabeçalho */
+.logo, #logo img {
+    width: 150px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 8px; /* Dá um toque mais moderno se a imagem tiver fundo */
+    padding: 5px;
 }
 
-/* alterando a tag nav pelo id*/
-#menu{
-    width: 300px;
-    height: 160px;
-    color: #8373b7;
+#cabecalho h1 {
+    font-family: "Times New Roman", Times, serif;
+    color: #fff; /* Título em branco para dar contraste com o fundo roxo */
+    font-size: 2.2rem;
+}
+
+/* =========================================
+   3. Menu de Navegação
+   ========================================= */
+nav, #menu {
+    background-color: #3b205e;
+    padding: 15px;
     display: flex;
-    align-items:center;
-    justify-content: center; 
-}
-/*alterando as imagens de icones pela div e elemento img*/
-#div-icones img {
-    width: 70px;
-    height: 60px;
-}
-
-/* formatando os menus*/
-#menu a:link{
-    font-size: 1.3em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--cor_lnk_menu)
-}
-
-#menu a:visited{
-    font-size: 1.3em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--cor_lnk_menu)
-}
-
-#menu a:hover{
-    font-size: 1.6em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--cor_botao01)
-}
-
-#menu a:active{
-    font-size: 1.3em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--cor_vermelha)
-}
-/* formatação dos cards*/ 
-
-    #cards{   
-        width: 1000px;
-        min-height: 600px;
-        margin: 20px 0px;
-        padding: 10px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        
-    }
-
-    .card{
-        width: 250px;
-        min-height: 250px;
-        border: solid 1px;
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .card:hover{
-    transform: translateY(-5px);
-    transition: 0.3s;    
-    }
-
-
-    .card h2{
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin: 10px 0px;
-    }
-
-    .card h3{
-        margin: 20px 0px;   
-    }
-
-    .card button{
-        width: 100%;
-        height: 45px;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        border: none;
-        background-color: var(--cor_lnk_menu);
-        cursor: pointer;
-    }
-
-    .card img{
-        width: 100%;
-        height: 250px;
-    }
-
-    /* formatação do rodapé*/ 
-
-    #rodape{
-        width: 100%;
-        height: 300px;
-        background-color: var(--cor_vermelha);
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }    
-
-    #dadosloja{
-        font-size: 0.8em;
-    }
-
-    #icones_sociais ul {
-        list-style: none;
-    }
-
-    #icones_sociais img{
-        width: 25px;
-        height: 25px;
-        margin-left: 50px;
-    }
-
-    #div-cartoes img{
-        width: 25px;
-        height: 25px;
-    }
-
-    .logo{
-    width:180px;
-    display:block;
-    margin:auto;
-    }
-
-.galeria{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
+    justify-content: center;
     align-items: center;
+    gap: 30px; /* Dá espaçamento entre os links */
 }
 
-.produto{
-    width:250px;
-    text-decoration: solid;
-    background:#fff;
-    border-radius:15px;
-    padding:15px;
-    box-shadow:0 4px 10px rgba(0,0,0,.1);
+nav a, #menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.produto img{
-    width: 100%;
-    height: 150px;
-    object-fit:cover;
+nav a:hover, #menu a:hover {
+    color: var(--cor_destaque);
+    transform: scale(1.05); /* Pequeno efeito de aumento ao passar o mouse */
+}
+
+/* =========================================
+   4. Conteúdo Principal (Página Sobre)
+   ========================================= */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    text-align: center;
+    color: var(--cor_principal);
+    margin-bottom: 25px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 2rem;
+}
+
+.container p {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+/* =========================================
+   5. Tabela do Carrinho e Imagens Internas
+   ========================================= */
+table {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+    border-radius: 8px;
+    overflow: hidden; /* Mantém as bordas arredondadas na tabela */
+}
+
+th {
+    background: var(--cor_secundaria);
+    color: white;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+td img {
+    width: 80px;  /* Mude aqui para aumentar ou diminuir a largura */
+    height: 80px; /* Mude aqui para aumentar ou diminuir a altura */
+    object-fit: cover; 
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;    /* 100% faz a imagem preencher a largura toda do card */
+    height: 260px;  /* Mude este valor para deixar a foto mais alta ou mais baixa */
+    object-fit: cover;
     border-radius: 15px;
+    transition: .3s;
+}
+
+/* FORÇAR REDIMENSIONAMENTO DAS IMAGENS DO CATÁLOGO */
+#geral img, 
+.galeria img,
+main img,
+.produto img {
+    width: 100% !important;
+    max-width: 250px !important;
+    height: 260px !important;
+    object-fit: cover !important;
+    border-radius: 15px !important;
+}
+
+/* Garante que o bloco onde as fotos estão não estoure a tela */
+.card, .produto {
+    width: 250px !important;
+    max-width: 250px !important;
+    overflow: hidden !important;
+}
+
+.galeria {
+    display: grid;
+    /* O Grid ajusta automaticamente quantos produtos cabem na tela lado a lado */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza a galeria na tela */
+    justify-items: center;
+}
+
+.produto {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    width: 100%;
+    max-width: 280px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra super suave */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produto:hover {
+    transform: translateY(-10px); /* O card sobe um pouquinho */
+    box-shadow: 0 12px 25px rgba(80, 45, 121, 0.2); /* A sombra fica roxa/visível */
+    cursor: pointer;
+}
+
+.produto img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Mantém a imagem proporcional sem achatar */
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.produto:hover img {
+    transform: scale(1.05); /* A foto dá um leve zoom */
+}
+
+.produto h3 {
+    font-size: 1.2rem;
+    color: var(--cor_principal);
+    margin-bottom: 10px;
+}
+
+.produto p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--cor_destaque); /* Usa a cor ciano/azul para destacar o preço */
+}
+
+/* =========================================
+   Botões do Carrinho Modernos
+   ========================================= */
+.botoes {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.botoes button {
+    background-color: var(--cor_secundaria);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botoes button:hover {
+    background-color: var(--cor_principal);
+    transform: scale(1.05);
 }
