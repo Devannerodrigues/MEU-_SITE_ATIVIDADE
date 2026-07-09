@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Virtual</title>
+
+    <!-- Faz seu comentário -->
+    <!--LINK PARA ADICIONAR O FAVICON-->
+    <link rel="shortcut icon" href="../imagens/icones/favicon.ico" type="image/x-icon">
+   
+    <!--LINK PARA O ARQUIVO -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main id="geral">
+        <header id="cabecalho">
+            <div id="logo">
+                <a href="../index.html">
+                    <img src="../imagens/icones/logo.png" alt="logo">
+                </a>
+            </div>
+
+            <nav id="menu">
+                <ul>
+                    <li><a href="../index.html" class="lnk_menu"> Home </a></li>
+                    <li><a href="../paginas/cadastro.html" class="lnk_menu"> Cadastro </a></li>
+                    <li><a href="../paginas/sobre.html" class="lnk_menu">Sobre</a></li>
+                </ul>
+            </nav>
+
+            <div id="div-icones">
+                <ul>
+                    <li><a href="login.html" class="lnk_icone"><img src="../imagens/icones/login.png" alt=""></a>
+                    </li>
+                    <li><a href="carrinho.html" class="lnk_icone"><img src="../imagens/icones/carrinho.png"
+                                alt=""></a></li>
+                </ul>
+            </div>
+        </header>
+
+        <section id="pesquisa">
+            <input type="text" name="pesquisa" id="pesquisa" placeholder="Digite seu produto">
+        </section>
+
+        <section id="formulario">
+            <h3>Cadastro</h3>
+
+            <form id="form-pessoa">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" class="input01" required maxlength="60"
+                    placeholder="Digite Seu nome">
+
+                <label for="cpf">CPF</label>
+                <input type="text" name="cpf" id="cpf" class="input02" required maxlength="14"
+                    placeholder="Digite Seu cpf">
+
+                <label for="data-nascimento">Data Nascimento</label>
+                <input type="date" name="data-nascimento" id="data-nascimento" class="input02" required>
+
+                <label for="sexo">Sexo</label>
+                <input type="radio" name="sexo" id="sexoM" class="inputOP" value="M"> Masculino
+                <input type="radio" name="sexo" id="sexoF" class="inputOP" value="F"> Feminino
+                <input type="radio" name="sexo" id="sexoN" class="inputOP" value="N"> Não Declarar
+
+                <label for="cep">CEP</label>
+                <input type="text" name="cep" id="cep" class="input02" required maxlength="9"
+                    placeholder="Digite Seu CEP">
+
+                <div id="div-dados-endereco" class="oculto">
+                    <label for="logradouro">Logradouro</label>
+                    <input type="text" name="logradouro" id="logradouro" class="input01">
+
+                    <label for="num-residencia">Número</label>
+                    <input type="text" name="logradouro" id="logradouro" class="input02" maxlength="10" placeholder="Digite o número da residencia" required>
+
+                    <label for="complemento-end">Complemento</label>
+                    <input type="text" name="complemento-end" id="complemento-end" class="input01" maxlength="100" placeholder="Digite o número da residencia" >
+
+                    <label for="bairro">Bairro</label>
+                    <input type="text" name="bairro" id="bairro" class="input01">
+
+                    <label for="localidade">localidade</label>
+                    <input type="text" name="localidade" id="localidade" class="input01">
+
+                    <label for="uf">UF</label>
+                    <input type="text" name="uf" id="uf" class="input02">
+                </div>
+
+                <label for="senha"> Senha </label>
+                <input type="password" name="senha"  id="senha" class="input02" required maxlength="6" placeholder="Informe a senha">
+                
+                <div id="div-btns">
+                    <button type="submit" id="btn-add"> Cadastrar </button>
+                    <button type="reset" id="btn-limpar">Limpar</button>
+                </div>
+
+            </form>
+        </section>
+
+        <footer id="rodape">
+            <div id="dadosloja">
+                <h2>Rua sei la das quantas, 1001 - Centro</h2>
+                <h1>Aracaju - Sergipe</h1>
+            </div>
+
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
