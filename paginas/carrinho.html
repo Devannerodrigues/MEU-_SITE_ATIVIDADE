@@ -2,137 +2,111 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho | AG Acessórios</title>
 
-    <!-- CSS -->
+    <title>Carrinho</title>
+
     <link rel="stylesheet" href="../css/style.css">
+
+    <script src="../js/carrega_produto.js" type="module" defer></script>
+
 </head>
 
 <body>
 
-    <main id="geral">
+<main id="geral">
 
-        <!-- ================= CABEÇALHO ================= -->
+<header id="cabecalho">
 
-        <header id="cabecalho">
+    <div id="logo">
 
-            <div id="logo">
-                <a href="../index.html">
-                    <img src="../img/logo.png" alt="Logo AG Acessórios">
-                </a>
-            </div>
+        <a href="../index.html">
 
-            <nav id="menu">
-                <ul>
-                    <li><a href="../index.html" class="lnk_menu">Home</a></li>
-                    <li><a href="cadastro.html" class="lnk_menu">Cadastro</a></li>
-                    <li><a href="login.html" class="lnk_menu">Login</a></li>
-                    <li><a href="sobre.html" class="lnk_menu">Sobre</a></li>
-                    <li><a href="carrinho.html" class="lnk_menu">Carrinho</a></li>
-                </ul>
-            </nav>
+            <img src="../img/logo.png" alt="Logo">
 
-            <div id="div-icones">
-                <ul>
+        </a>
 
-                    <li>
-                        <a href="login.html" class="lnk_icone">
-                            <img src="../img/login.png" alt="Login">
-                        </a>
-                    </li>
+    </div>
 
-                    <li>
-                        <a href="carrinho.html" class="lnk_icone">
-                            <img src="../img/pix.png" alt="Carrinho">
-                        </a>
-                    </li>
+    <nav id="menu">
 
-                </ul>
-            </div>
+        <ul>
 
-        </header>
+            <li><a href="../index.html" class="lnk_menu">Home</a></li>
 
-        <!-- ================= CARRINHO ================= -->
+            <li><a href="cadastro.html" class="lnk_menu">Cadastro</a></li>
 
-        <section class="container">
+            <li><a href="login.html" class="lnk_menu">Login</a></li>
 
-            <h2>Carrinho de Compras</h2>
+            <li><a href="sobre.html" class="lnk_menu">Sobre</a></li>
 
-            <table>
+        </ul>
 
-                <thead>
+    </nav>
 
-                    <tr>
-                        <th>Produto</th>
-                        <th>Quantidade</th>
-                        <th>Preço</th>
-                        <th>Subtotal</th>
-                    </tr>
+</header>
 
-                </thead>
 
-                <tbody>
 
-                    <tr>
-                        <td>Presilha Lilás</td>
-                        <td>2</td>
-                        <td>R$ 20,50</td>
-                        <td>R$ 41,00</td>
-                    </tr>
+<section class="container">
 
-                    <tr>
-                        <td>Elástico de Cetim</td>
-                        <td>3</td>
-                        <td>R$ 10,00</td>
-                        <td>R$ 30,00</td>
-                    </tr>
+<h2>Meu Carrinho</h2>
 
-                    <tr>
-                        <td>Prendedor Luxo</td>
-                        <td>1</td>
-                        <td>R$ 25,90</td>
-                        <td>R$ 25,90</td>
-                    </tr>
+<table>
 
-                </tbody>
+<thead>
 
-            </table>
+<tr>
 
-            <div class="total">
-                <h3>Total: <strong>R$ 96,90</strong></h3>
-            </div>
+<th>Imagem</th>
 
-            <div class="botoes">
+<th>Produto</th>
 
-                <button onclick="window.location.href='../index.html'">
-                    Continuar Comprando
-                </button>
+<th>Preço</th>
 
-                <button>
-                    Finalizar Compra
-                </button>
+<th>Quantidade</th>
 
-            </div>
+<th>Subtotal</th>
 
-        </section>
+<th>Ações</th>
 
-        <!-- ================= RODAPÉ ================= -->
+</tr>
 
-        <footer id="rodape">
+</thead>
 
-            <div id="dadosloja">
+<tbody id="lista-carrinho">
 
-                <h2>Rua Sei Lá das Quantas, 1001 - Centro</h2>
+</tbody>
 
-                <h3>Aracaju - Sergipe</h3>
+</table>
 
-            </div>
+<h2 id="total-geral">
 
-        </footer>
+Total: R$ 0,00
 
-    </main>
+</h2>
+
+<div class="botoes">
+
+<button id="btn-limpar">
+
+Limpar Carrinho
+
+</button>
+
+<button id="btn-finalizar">
+
+Finalizar Compra
+
+</button>
+
+</div>
+
+</section>
+
+</main>
 
 </body>
 
