@@ -1,86 +1,142 @@
-//IMPORTANDO O ARRAY DOS PRODUTOS
 import { produtos } from "./produtos.js";
 
-//PEGANDO ELEMENTOS O DOM
-const section_cards = document.querySelector('#cards')  
+const cards = document.querySelector("#cards");
+const menu = document.querySelector("#menu-secoes");
+const pesquisa = document.querySelector("#campo-pesquisa");
 
-//FUNÇÃO PARA CARREGAER OS PRODUTOS
-const listaprodutos = () => {  
-    section_cards.innerHTML = ''
-    produtos.forEach((elem, i) => {  
-        const divCard = document.createElement('div')
-        divCard.setAttribute('class', 'card')
+//===============================
+// CARREGAR PRODUTOS
+//===============================
 
-        const imgProduto = document.createElement('img')
-        imgProduto.setAttribute('src', elem.caminho_da_imagm)  
-        imgProduto.setAttribute('alt', elem.descricao_produto)
-        imgProduto.setAttribute('class', 'img_card')
+function listarProdutos(lista = produtos){
 
-        const h2Titulo = document.createElement('h2')
-        h2Titulo.innerHTML = elem.descricao_produto
+    cards.innerHTML="";
 
-        const divValor = document.createElement('h3')  
-        divValor.setAttribute('class', 'valor_card')
-        divValor.innerHTML = `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.', ',')}`
-        const bntCard = document.createElement('button')
-        bntCard.setAttribute('class', 'bnt_card')  
-        bntCard.innerHTML = 'Adicionar'
+    lista.forEach(produto=>{
 
-        divCard.appendChild(imgProduto)  
-        divCard.appendChild(h2Titulo)  
-        divCard.appendChild(divValor)  
-        divCard.appendChild(bntCard)
+        const card=document.createElement("div");
+        card.className="card";
 
-        section_cards.appendChild(divCard)
-    })
+        card.innerHTML=`
+
+            <img src="${produto.caminho_da_imagem}" class="img_card">
+
+            <h2>${produto.descricao_produto}</h2>
+
+            <h3 class="valor_card">
+            R$ ${produto.valor_unitario.toFixed(2).replace(".",",")}
+            </h3>
+
+            <button class="btn_card">
+                Adicionar
+            </button>
+
+        `;
+
+        cards.appendChild(card);
+
+    });
+
 }
 
-listarProdutos() 
+//===============================
+// PEGAR SEÇÕES
+//===============================
 
-//FILTRANDO AS SEÇÕES COM A COLEÇÃO map
-const listarSecoes = () => { 
-    const secoesFiltradas = new Map()  
+function listarSecoes(){
 
-    produtos.forEach((elem, i) => {
-        secoesFiltradas.set(elem.id_secao, elem)  
-    })
+    const mapa=new Map();
 
-    const secoesMenu = Array.from(secoesFiltradas.values())  
+    produtos.forEach(produto=>{
 
-    return secoesMenu
+        mapa.set(produto.id_secao,produto);
+
+    });
+
+    return [...mapa.values()];
+
 }
 
-//MONTANDO OS LINKS SEÇÕES
-const montarSecoes = () => {
-    //PEGANDO O ELEMENTO DOM
-    const ulMenu = document.querySelector('#menu-secoes')
-    //
-    ulMenu.innerHTML = ''
+//===============================
+// MENU
+//===============================
 
-    listarSecoes().forEach((elem, i) => {
-        const liSecao = documento.createElement('li')
-        const aSecao = document.createElement('a')
-        aSecao.setAttribute('href', '#')
-        aSecao.setAttribute('class','lnk-secao')
-        aSecao.innerHTML = elem.nome_secao
-        aSecao.addEventListener('click',()=>{
-            console.log(elem.id_secao)
-        })
+function montarSecoes(){
 
-        liSecao.appendChild(aSecao)
+    menu.innerHTML="";
 
-        ulMenu.appendChild(liSecao)
-    })  
+    const liTodos=document.createElement("li");
+
+    liTodos.innerHTML=`
+        <a href="#" class="lnk-secao">
+            Todos
+        </a>
+    `;
+
+    liTodos.onclick=(e)=>{
+
+        e.preventDefault();
+
+        listarProdutos();
+
+    };
+
+    menu.appendChild(liTodos);
+
+    listarSecoes().forEach(secao=>{
+
+        const li=document.createElement("li");
+
+        li.innerHTML=`
+
+        <a href="#" class="lnk-secao">
+
+            ${secao.nome_secao}
+
+        </a>
+
+        `;
+
+        li.onclick=(e)=>{
+
+            e.preventDefault();
+
+            const lista=produtos.filter(produto=>produto.id_secao===secao.id_secao);
+
+            listarProdutos(lista);
+
+        };
+
+        menu.appendChild(li);
+
+    });
+
 }
 
-montarSecoes()
+//===============================
+// PESQUISA
+//===============================
 
-//FILTRANDO PRODUTOS
-const produtosFiltrados = (idSecao)=>{
-    return produtos.filter(elem=> elem.id_secao === idSecao)
-}
+pesquisa.addEventListener("keyup",()=>{
 
-//MONTANDO CARDS
-const montandoCards = (objArray)=>{
-    
-}
+    const texto=pesquisa.value.toLowerCase();
+
+    const lista=produtos.filter(produto=>{
+
+        return produto.descricao_produto
+        .toLowerCase()
+        .includes(texto);
+
+    });
+
+    listarProdutos(lista);
+
+});
+
+//===============================
+// INICIAR
+//===============================
+
+listarProdutos();
+
+montarSecoes();

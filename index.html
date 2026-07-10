@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AG Acessórios</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- JavaScript -->
+    <script src="js/carrega_produto.js" type="module" defer></script>
+</head>
+
+<body>
+
+    <main id="geral">
+
+        <!-- ================= CABEÇALHO ================= -->
+
+        <header id="cabecalho">
+
+            <div id="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="Logo AG Acessórios">
+                </a>
+            </div>
+
+            <nav id="menu">
+                <ul>
+                    <li><a href="index.html" class="lnk_menu">Home</a></li>
+                    <li><a href="paginas/cadastro.html" class="lnk_menu">Cadastro</a></li>
+                    <li><a href="paginas/login.html" class="lnk_menu">Login</a></li>
+                    <li><a href="paginas/sobre.html" class="lnk_menu">Sobre</a></li>
+                    <li><a href="paginas/carrinho.html" class="lnk_menu">Carrinho</a></li>
+                </ul>
+            </nav>
+
+            <div id="div-icones">
+                <ul>
+
+                    <li>
+                        <a href="paginas/login.html" class="lnk_icone">
+                            <img src="img/login.png" alt="Login">
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="paginas/carrinho.html" class="lnk_icone">
+                            <img src="img/pix.png" alt="Carrinho">
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </header>
+
+        <!-- ================= MENU DE CATEGORIAS ================= -->
+
+        <nav id="nav-secoes">
+
+            <ul id="menu-secoes">
+
+                <li><a href="#" class="lnk-secao" data-categoria="todos">Todos</a></li>
+
+                <li><a href="#" class="lnk-secao" data-categoria="tiara">Tiaras</a></li>
+
+                <li><a href="#" class="lnk-secao" data-categoria="presilha">Presilhas</a></li>
+
+                <li><a href="#" class="lnk-secao" data-categoria="elastico">Elásticos</a></li>
+
+                <li><a href="#" class="lnk-secao" data-categoria="piranha">Piranhas</a></li>
+
+            </ul>
+
+        </nav>
+
+        <!-- ================= PESQUISA ================= -->
+
+        <section id="pesquisa">
+
+            <input
+                type="text"
+                id="campo-pesquisa"
+                placeholder="Pesquisar produtos...">
+
+        </section>
+
+        <!-- ================= PRODUTOS ================= -->
+
+        <section id="cards">
+
+            <div class="card" data-categoria="elastico">
+
+                <img src="img/elastico 2.jpeg" alt="Elástico" class="img_card">
+
+                <h2 class="titulo_card">Elástico</h2>
+
+                <h3 class="valor_card">R$ 55,00</h3>
+
+                <button class="btn_card">Adicionar</button>
+
+            </div>
+
+            <div class="card" data-categoria="elastico">
+
+                <img src="img/elastico de cetim.jpeg" alt="Elástico de Cetim" class="img_card">
+
+                <h2 class="titulo_card">Elástico de Cetim</h2>
+
+                <h3 class="valor_card">R$ 45,00</h3>
+
+                <button class="btn_card">Adicionar</button>
+
+            </div>
+
+            <div class="card" data-categoria="presilha">
+
+                <img src="img/presilia.jpeg" alt="Presilha" class="img_card">
+
+                <h2 class="titulo_card">Presilha Lilás</h2>
+
+                <h3 class="valor_card">R$ 20,50</h3>
+
+                <button class="btn_card">Adicionar</button>
+
+            </div>
+
+            <div class="card" data-categoria="presilha">
+
+                <img src="img/presilia 2.jpeg" alt="Presilha Luxo" class="img_card">
+
+                <h2 class="titulo_card">Presilha Luxo</h2>
+
+                <h3 class="valor_card">R$ 30,00</h3>
+
+                <button class="btn_card">Adicionar</button>
+
+            </div>
+
+            <div class="card" data-categoria="piranha">
+
+                <img src="img/piranha 2.jpeg" alt="Piranha" class="img_card">
+
+                <h2 class="titulo_card">Piranha</h2>
+
+                <h3 class="valor_card">R$ 35,00</h3>
+
+                <button class="btn_card">Adicionar</button>
+
+            </div>
+
+            <div class="card" data-categoria="tiara">
+
+                <img src="img/tiara gravejada.jpeg" alt="Tiara Cravejada" class="img_card">
+
+                <h2 class="titulo_card">Tiara Cravejada</h2>
+
+                <h3 class="valor_card">R$ 55,35</h3>
+
+                <button class="btn_card">Adicionar</button>
+
+            </div>
+
+            <div class="card" data-categoria="presilha">
+
+                <img src="img/prendendor luxo.jpeg" alt="Prendedor Luxo" class="img_card">
+
+                <h2 class="titulo_card">Prendedor Luxo</h2>
+
+                <h3 class="valor_card">R$ 25,90</h3>
+
+                <button class="btn_card">Adicionar</button>
+
+            </div>
+
+        </section>
+
+        <!-- ================= RODAPÉ ================= -->
+
+        <footer id="rodape">
+
+            <div id="dadosloja">
+
+                <h2>Rua Sei Lá das Quantas, 1001 - Centro</h2>
+
+                <h3>Aracaju - Sergipe</h3>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

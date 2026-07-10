@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | AG Acessórios</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <main id="geral">
+
+        <!-- ================= CABEÇALHO ================= -->
+
+        <header id="cabecalho">
+
+            <div id="logo">
+                <a href="../index.html">
+                    <img src="../img/logo.png" alt="Logo AG Acessórios">
+                </a>
+            </div>
+
+            <nav id="menu">
+                <ul>
+                    <li><a href="../index.html" class="lnk_menu">Home</a></li>
+                    <li><a href="cadastro.html" class="lnk_menu">Cadastro</a></li>
+                    <li><a href="login.html" class="lnk_menu">Login</a></li>
+                    <li><a href="sobre.html" class="lnk_menu">Sobre</a></li>
+                    <li><a href="carrinho.html" class="lnk_menu">Carrinho</a></li>
+                </ul>
+            </nav>
+
+            <div id="div-icones">
+                <ul>
+                    <li>
+                        <a href="login.html" class="lnk_icone">
+                            <img src="../img/login.png" alt="Login">
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="carrinho.html" class="lnk_icone">
+                            <img src="../img/pix.png" alt="Carrinho">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </header>
+
+        <!-- ================= LOGIN ================= -->
+
+        <section id="formulario">
+
+            <h2>Entrar na Conta</h2>
+
+            <form id="form-login">
+
+                <label for="email">E-mail</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    class="input01"
+                    placeholder="Digite seu e-mail"
+                    required>
+
+                <label for="senha">Senha</label>
+
+                <input
+                    type="password"
+                    id="senha"
+                    class="input01"
+                    placeholder="Digite sua senha"
+                    required>
+
+                <div id="div-btns">
+
+                    <button
+                        type="submit"
+                        id="btn-add">
+                        Entrar
+                    </button>
+
+                    <button
+                        type="reset"
+                        id="btn-limpar">
+                        Limpar
+                    </button>
+
+                </div>
+
+                <p style="text-align:center; margin-top:20px;">
+                    Ainda não possui cadastro?
+
+                    <a href="cadastro.html">
+                        Clique aqui
+                    </a>
+
+                </p>
+
+            </form>
+
+        </section>
+
+        <!-- ================= RODAPÉ ================= -->
+
+        <footer id="rodape">
+
+            <div id="dadosloja">
+
+                <h2>Rua Sei Lá das Quantas, 1001 - Centro</h2>
+
+                <h3>Aracaju - Sergipe</h3>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
