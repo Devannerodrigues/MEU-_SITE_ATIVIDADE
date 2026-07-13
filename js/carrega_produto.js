@@ -1,29 +1,10 @@
-//=====================================================
-// IMPORTA O ARRAY DE PRODUTOS
-//=====================================================
-
 import { produtos } from "./produtos.js";
-
-
-//=====================================================
-// ELEMENTOS DO DOM
-//=====================================================
 
 const sectionCards = document.querySelector("#cards");
 const menuSecoes = document.querySelector("#menu-secoes");
 const campoPesquisa = document.querySelector("#campo-pesquisa");
 
-
-//=====================================================
-// VARIÁVEL DO CARRINHO
-//=====================================================
-
 let carrinho = [];
-
-
-//=====================================================
-// LISTAR PRODUTOS
-//=====================================================
 
 function listarProdutos(lista = produtos){
 
@@ -75,12 +56,6 @@ function listarProdutos(lista = produtos){
 
 }
 
-
-
-//=====================================================
-// LISTAR AS SEÇÕES
-//=====================================================
-
 function listarSecoes(){
 
     const mapa = new Map();
@@ -95,19 +70,10 @@ function listarSecoes(){
 
 }
 
-
-
-//=====================================================
-// MONTAR MENU DAS SEÇÕES
-//=====================================================
-
 function montarSecoes(){
 
     menuSecoes.innerHTML = "";
 
-
-
-    // BOTÃO TODOS
 
     const liTodos = document.createElement("li");
 
@@ -134,9 +100,6 @@ function montarSecoes(){
     menuSecoes.appendChild(liTodos);
 
 
-
-
-    // DEMAIS SEÇÕES
 
     listarSecoes().forEach(secao=>{
 
@@ -173,9 +136,6 @@ function montarSecoes(){
     });
 
 }
-//=====================================================
-// SALVAR CARRINHO
-//=====================================================
 
 function salvarCarrinho(){
 
@@ -183,11 +143,6 @@ function salvarCarrinho(){
 
 }
 
-
-
-//=====================================================
-// CARREGAR CARRINHO
-//=====================================================
 
 function carregarCarrinho(){
 
@@ -201,11 +156,6 @@ function carregarCarrinho(){
 
 }
 
-
-
-//=====================================================
-// ADICIONAR PRODUTO AO CARRINHO
-//=====================================================
 
 function adicionarCarrinho(produto){
 
@@ -243,11 +193,6 @@ function adicionarCarrinho(produto){
 }
 
 
-
-//=====================================================
-// CONTADOR DO CARRINHO
-//=====================================================
-
 function atualizarContador(){
 
     const contador = document.querySelector("#contador-carrinho");
@@ -266,11 +211,6 @@ function atualizarContador(){
 
 }
 
-
-
-//=====================================================
-// PESQUISA DE PRODUTOS
-//=====================================================
 
 if(campoPesquisa){
 
@@ -291,9 +231,6 @@ if(campoPesquisa){
     });
 
 }
-//=====================================================
-// REMOVER PRODUTO DO CARRINHO
-//=====================================================
 
 function removerCarrinho(idProduto){
 
@@ -308,11 +245,6 @@ function removerCarrinho(idProduto){
 }
 
 
-
-//=====================================================
-// LIMPAR CARRINHO
-//=====================================================
-
 function limparCarrinho(){
 
     carrinho = [];
@@ -325,11 +257,6 @@ function limparCarrinho(){
 
 }
 
-
-
-//=====================================================
-// TOTAL DO CARRINHO
-//=====================================================
 
 function calcularTotal(){
 
@@ -345,11 +272,6 @@ function calcularTotal(){
 
 }
 
-
-
-//=====================================================
-// AUMENTAR QUANTIDADE
-//=====================================================
 
 function aumentarQuantidade(idProduto){
 
@@ -369,11 +291,6 @@ function aumentarQuantidade(idProduto){
 
 }
 
-
-
-//=====================================================
-// DIMINUIR QUANTIDADE
-//=====================================================
 
 function diminuirQuantidade(idProduto){
 
@@ -400,19 +317,12 @@ function diminuirQuantidade(idProduto){
 }
 
 
-
-//=====================================================
-// RETORNA O CARRINHO
-//=====================================================
-
 function obterCarrinho(){
 
     return carrinho;
 
 }
-//====================================================
-// MONTAR O CARRINHO
-//====================================================
+
 
 function montarCarrinho(){
 
@@ -497,10 +407,6 @@ function montarCarrinho(){
 
 
 
-//=====================================================
-// INICIALIZAÇÃO
-//=====================================================
-
 carregarCarrinho();
 
 if(sectionCards){
@@ -523,9 +429,6 @@ montarCarrinho();
 window.aumentarQuantidade = aumentarQuantidade;
 window.diminuirQuantidade = diminuirQuantidade;
 window.removerCarrinho = removerCarrinho;
-//=====================================================
-// EXPORTA AS FUNÇÕES
-//=====================================================
 
 export {
 

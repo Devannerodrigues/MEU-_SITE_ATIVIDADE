@@ -1,13 +1,6 @@
-// =====================================
-// PRODUTOS DA LOJA AG ACESSÓRIOS
-// =====================================
-
 const produtos = [
 
-    // ==========================
-    // TIARAS
-    // ==========================
-
+ // Tiaras
     {
         id_produto: 1,
         descricao_produto: "Tiara Cravejada",
@@ -44,9 +37,7 @@ const produtos = [
         nome_secao: "Tiaras"
     },
 
-    // ==========================
     // PRESILHAS
-    // ==========================
 
     {
         id_produto: 5,
@@ -84,9 +75,7 @@ const produtos = [
         nome_secao: "Presilhas"
     },
 
-    // ==========================
     // ELÁSTICOS
-    // ==========================
 
     {
         id_produto: 9,
@@ -124,9 +113,7 @@ const produtos = [
         nome_secao: "Elásticos"
     },
 
-    // ==========================
     // PIRANHAS
-    // ==========================
 
     {
         id_produto: 13,
@@ -166,8 +153,6 @@ const produtos = [
 
 ];
 
-// =====================================
 // EXPORTAÇÃO
-// =====================================
 
 export { produtos };
