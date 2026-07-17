@@ -6,11 +6,11 @@ const campoPesquisa = document.querySelector("#campo-pesquisa");
 
 let carrinho = [];
 
-function listarProdutos(lista = produtos){
+function listarProdutos(lista = produtos) {
 
     sectionCards.innerHTML = "";
 
-    lista.forEach(produto=>{
+    lista.forEach(produto => {
 
         const card = document.createElement("div");
         card.classList.add("card");
@@ -28,7 +28,7 @@ function listarProdutos(lista = produtos){
 
         const valor = document.createElement("h3");
         valor.classList.add("valor_card");
-        valor.innerHTML = `R$ ${produto.valor_unitario.toFixed(2).replace(".",",")}`;
+        valor.innerHTML = `R$ ${produto.valor_unitario.toFixed(2).replace(".", ",")}`;
 
 
         const botao = document.createElement("button");
@@ -36,9 +36,7 @@ function listarProdutos(lista = produtos){
         botao.innerHTML = "Adicionar";
 
 
-        // será implementado na parte 2
-
-        botao.addEventListener("click",()=>{
+        botao.addEventListener("click", () => {
 
             adicionarCarrinho(produto);
 
@@ -56,13 +54,13 @@ function listarProdutos(lista = produtos){
 
 }
 
-function listarSecoes(){
+function listarSecoes() {
 
     const mapa = new Map();
 
-    produtos.forEach(produto=>{
+    produtos.forEach(produto => {
 
-        mapa.set(produto.id_secao,produto);
+        mapa.set(produto.id_secao, produto);
 
     });
 
@@ -70,7 +68,7 @@ function listarSecoes(){
 
 }
 
-function montarSecoes(){
+function montarSecoes() {
 
     menuSecoes.innerHTML = "";
 
@@ -79,14 +77,14 @@ function montarSecoes(){
 
     const aTodos = document.createElement("a");
 
-    aTodos.href="#";
+    aTodos.href = "#";
 
     aTodos.classList.add("lnk-secao");
 
-    aTodos.innerHTML="Todos";
+    aTodos.innerHTML = "Todos";
 
 
-    aTodos.addEventListener("click",(e)=>{
+    aTodos.addEventListener("click", (e) => {
 
         e.preventDefault();
 
@@ -101,13 +99,14 @@ function montarSecoes(){
 
 
 
-    listarSecoes().forEach(secao=>{
+    listarSecoes().forEach(secao => {
 
         const li = document.createElement("li");
 
         const a = document.createElement("a");
 
-        a.href="#";
+        a.href = "#";
+        
 
         a.classList.add("lnk-secao");
 
@@ -115,11 +114,11 @@ function montarSecoes(){
 
 
 
-        a.addEventListener("click",(e)=>{
+        a.addEventListener("click", (e) => {
 
             e.preventDefault();
 
-            const lista = produtos.filter(produto=>{
+            const lista = produtos.filter(produto => {
 
                 return produto.id_secao === secao.id_secao;
 
@@ -137,18 +136,18 @@ function montarSecoes(){
 
 }
 
-function salvarCarrinho(){
+function salvarCarrinho() {
 
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
 }
 
 
-function carregarCarrinho(){
+function carregarCarrinho() {
 
     const dados = localStorage.getItem("carrinho");
 
-    if(dados){
+    if (dados) {
 
         carrinho = JSON.parse(dados);
 
@@ -157,18 +156,18 @@ function carregarCarrinho(){
 }
 
 
-function adicionarCarrinho(produto){
+function adicionarCarrinho(produto) {
 
     const existe = carrinho.find(item => item.id_produto === produto.id_produto);
 
 
-    if(existe){
+    if (existe) {
 
         existe.quantidade++;
 
     }
 
-    else{
+    else {
 
         carrinho.push({
 
@@ -176,7 +175,7 @@ function adicionarCarrinho(produto){
             descricao_produto: produto.descricao_produto,
             caminho_da_imagem: produto.caminho_da_imagem,
             valor_unitario: produto.valor_unitario,
-            quantidade:1
+            quantidade: 1
 
         });
 
@@ -193,15 +192,15 @@ function adicionarCarrinho(produto){
 }
 
 
-function atualizarContador(){
+function atualizarContador() {
 
     const contador = document.querySelector("#contador-carrinho");
 
-    if(!contador) return;
+    if (!contador) return;
 
     let quantidade = 0;
 
-    carrinho.forEach(produto=>{
+    carrinho.forEach(produto => {
 
         quantidade += produto.quantidade;
 
@@ -212,13 +211,13 @@ function atualizarContador(){
 }
 
 
-if(campoPesquisa){
+if (campoPesquisa) {
 
-    campoPesquisa.addEventListener("keyup",()=>{
+    campoPesquisa.addEventListener("keyup", () => {
 
         const texto = campoPesquisa.value.toLowerCase();
 
-        const lista = produtos.filter(produto=>{
+        const lista = produtos.filter(produto => {
 
             return produto.descricao_produto
                 .toLowerCase()
@@ -232,7 +231,7 @@ if(campoPesquisa){
 
 }
 
-function removerCarrinho(idProduto){
+function removerCarrinho(idProduto) {
 
     carrinho = carrinho.filter(produto => produto.id_produto !== idProduto);
 
@@ -245,7 +244,7 @@ function removerCarrinho(idProduto){
 }
 
 
-function limparCarrinho(){
+function limparCarrinho() {
 
     carrinho = [];
 
@@ -258,11 +257,11 @@ function limparCarrinho(){
 }
 
 
-function calcularTotal(){
+function calcularTotal() {
 
     let total = 0;
 
-    carrinho.forEach(produto=>{
+    carrinho.forEach(produto => {
 
         total += produto.valor_unitario * produto.quantidade;
 
@@ -273,11 +272,11 @@ function calcularTotal(){
 }
 
 
-function aumentarQuantidade(idProduto){
+function aumentarQuantidade(idProduto) {
 
     const produto = carrinho.find(item => item.id_produto === idProduto);
 
-    if(produto){
+    if (produto) {
 
         produto.quantidade++;
 
@@ -292,15 +291,15 @@ function aumentarQuantidade(idProduto){
 }
 
 
-function diminuirQuantidade(idProduto){
+function diminuirQuantidade(idProduto) {
 
     const produto = carrinho.find(item => item.id_produto === idProduto);
 
-    if(!produto) return;
+    if (!produto) return;
 
     produto.quantidade--;
 
-    if(produto.quantidade <= 0){
+    if (produto.quantidade <= 0) {
 
         removerCarrinho(idProduto);
 
@@ -317,24 +316,24 @@ function diminuirQuantidade(idProduto){
 }
 
 
-function obterCarrinho(){
+function obterCarrinho() {
 
     return carrinho;
 
 }
 
 
-function montarCarrinho(){
+function montarCarrinho() {
 
     const tabela = document.querySelector("#lista-carrinho");
 
-    if(!tabela) return;
+    if (!tabela) return;
 
-    tabela.innerHTML="";
+    tabela.innerHTML = "";
 
     let total = 0;
 
-    carrinho.forEach(produto=>{
+    carrinho.forEach(produto => {
 
         const subtotal = produto.quantidade * produto.valor_unitario;
 
@@ -358,7 +357,7 @@ function montarCarrinho(){
 
             <td>
 
-                R$ ${produto.valor_unitario.toFixed(2).replace(".",",")}
+                R$ ${produto.valor_unitario.toFixed(2).replace(".", ",")}
 
             </td>
 
@@ -374,7 +373,7 @@ function montarCarrinho(){
 
             <td>
 
-                R$ ${subtotal.toFixed(2).replace(".",",")}
+                R$ ${subtotal.toFixed(2).replace(".", ",")}
 
             </td>
 
@@ -396,26 +395,26 @@ function montarCarrinho(){
 
     const totalGeral = document.querySelector("#total-geral");
 
-    if(totalGeral){
+    if (totalGeral) {
 
         totalGeral.innerHTML =
-        `Total: R$ ${total.toFixed(2).replace(".",",")}`;
+            `Total: R$ ${total.toFixed(2).replace(".", ",")}`;
 
     }
 
-}   
+}
 
 
 
 carregarCarrinho();
 
-if(sectionCards){
+if (sectionCards) {
 
     listarProdutos();
 
 }
 
-if(menuSecoes){
+if (menuSecoes) {
 
     montarSecoes();
 
@@ -441,3 +440,38 @@ export {
     calcularTotal
 
 };
+
+async function buscarCEP() {
+
+    const numeroCEP = cep.value.replace(/\D/g, "");
+
+    if (numeroCEP.length !== 8) {
+        alert("CEP inválido.");
+        return;
+    }
+
+    try {
+
+        const resposta = await fetch(
+            `https://viacep.com.br/ws/${numeroCEP}/json/`
+        );
+
+        const dados = await resposta.json();
+
+        if (dados.erro) {
+            alert("CEP não encontrado.");
+            return;
+        }
+
+        logradouro.value = dados.logradouro;
+        bairro.value = dados.bairro;
+        cidade.value = dados.localidade;
+        estado.value = dados.uf;
+
+    } catch (erro) {
+
+        alert("Erro ao consultar o CEP.");
+
+    }
+
+}

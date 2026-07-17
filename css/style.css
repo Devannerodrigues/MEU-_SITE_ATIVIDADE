@@ -124,33 +124,23 @@ body{
 #cards,
 .galeria{
 
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-    gap:30px;
-
-    padding:30px;
-
-    justify-items:center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 30px;
+    padding: 30px;
+    justify-items: center;
 }
 
 .card,
 .produto{
 
     background:white;
-
-    width:260px;
-
-    border-radius:15px;
-
-    overflow:hidden;
-
-    text-align:center;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.10);
-
-    transition:.3s;
-
+    width: 260px;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,.10);
+    transition: .3s;
 }
 
 .card:hover,
@@ -163,159 +153,120 @@ body{
 .card img,
 .produto img{
 
-    width:100%;
-
-    height:260px;
-
-    object-fit:cover;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
 
 }
 
 .card h2,
 .produto h3{
 
-    margin:15px 0 10px;
-
-    color:var(--cor_principal);
+    margin: 15px 0 10px;
+    color: var(--cor_principal);
 
 }
 
 .valor_card,
 .produto p{
 
-    color:var(--cor_destaque);
-
-    font-size:20px;
-
-    font-weight:bold;
+    color: var(--cor_destaque);
+    font-size: 20px;
+    font-weight: bold;
 
 }
 
 .btn_card{
 
-    width:90%;
-
-    margin:20px;
-
-    padding:12px;
-
-    border:none;
-
-    border-radius:8px;
-
-    background:var(--cor_secundaria);
-
-    color:white;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    transition:.3s;
+    width: 90%;
+    margin: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--cor_secundaria);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
 
 }
 
 .btn_card:hover{
 
-    background:var(--cor_principal);
+    background: var(--cor_principal);
 
 }
 
 #formulario{
 
-    width:700px;
-    max-width:95%;
-
-    margin:40px auto;
-
-    background:white;
-
-    border-radius:15px;
-
-    padding:35px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-
+    width: 700px;
+    max-width: 95%;
+    margin: 40px auto;
+    background: white;
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
 #formulario h2,
 #formulario h3{
 
-    text-align:center;
-
-    color:var(--cor_principal);
-
-    margin-bottom:30px;
-
+    text-align: center;
+    color: var(--cor_principal);
+    margin-bottom: 30px;
 }
 
 #form-pessoa{
 
     display:flex;
-
     flex-direction:column;
 
 }
 
 #form-pessoa label{
 
-    margin-top:15px;
-
-    margin-bottom:5px;
-
-    font-weight:bold;
-
-    color:var(--cor_principal);
-
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--cor_principal);
 }
 
 .input01,
 .input02{
 
-    width:100%;
-
-    padding:12px;
-
-    border:1px solid #ccc;
-
-    border-radius:8px;
-
-    outline:none;
-
-    font-size:15px;
-
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
 }
 
 .input01:focus,
 .input02:focus{
 
-    border:2px solid var(--cor_secundaria);
+    border: 2px solid var(--cor_secundaria);
 
 }
 
 .grupo-radio{
 
-    display:flex;
-
-    gap:20px;
-
-    margin:15px 0;
-
-    align-items:center;
-
-    flex-wrap:wrap;
-
+    display: flex;
+    gap: 20px;
+    margin: 15px 0;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .inputOP{
 
-    margin-right:5px;
+    margin-right: 5px;
 
 }
 
 #div-dados-endereco{
 
-    margin-top:20px;
+    margin-top: 20px;
 
 }
 
@@ -327,122 +278,84 @@ body{
 
 #div-btns{
 
-    display:flex;
-
-    justify-content:center;
-
-    gap:20px;
-
-    margin-top:30px;
-
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
 }
 
 #btn-add,
 #btn-limpar{
 
-    padding:12px 35px;
-
-    border:none;
-
-    border-radius:8px;
-
-    background:var(--cor_secundaria);
-
-    color:white;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+    padding: 12px 35px;
+    border: none;
+    border-radius: 8px;
+    background: var(--cor_secundaria);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
 }
 
 #btn-add:hover,
 #btn-limpar:hover{
 
-    background:var(--cor_principal);
+    background: var(--cor_principal);
 
 }
 
 .container{
 
-    width:90%;
-
-    max-width:1000px;
-
-    margin:40px auto;
-
-    background:white;
-
-    padding:35px;
-
-    border-radius:15px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
 .container h2{
 
-    color:var(--cor_principal);
-
-    text-align:center;
-
-    margin-bottom:25px;
-
+    color: var(--cor_principal);
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 .container p{
 
-    text-align:justify;
-
-    margin-bottom:18px;
-
-    line-height:1.8;
-
+    text-align: justify;
+    margin-bottom: 18px;
+    line-height: 1.8;
 }
 
 table{
 
-    width:100%;
-
-    border-collapse:collapse;
-
-    margin-top:25px;
-
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
 }
 
 th{
 
-    background:var(--cor_secundaria);
-
-    color:white;
-
-    padding:15px;
-
+    background: var(--cor_secundaria);
+    color: white;
+    padding: 15px;
 }
 
 td{
 
-    padding:15px;
-
-    border-bottom:1px solid #ddd;
-
-    text-align:center;
-
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
 }
 
 td img{
 
-    width:80px;
-
-    height:80px;
-
-    object-fit:cover;
-
-    border-radius:8px;
-
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 tbody tr:hover{
@@ -453,51 +366,33 @@ tbody tr:hover{
 
 .total{
 
-    text-align:right;
-
-    margin-top:30px;
-
-    font-size:24px;
-
-    font-weight:bold;
-
-    color:var(--cor_principal);
-
+    text-align: right;
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--cor_principal);
 }
 
 
 .botoes{
 
-    display:flex;
-
-    justify-content:center;
-
-    gap:20px;
-
-    margin-top:35px;
-
-    flex-wrap:wrap;
-
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 35px;
+    flex-wrap: wrap;
 }
 
 .botoes button{
 
-    padding:15px 35px;
-
-    background:var(--cor_secundaria);
-
-    color:white;
-
-    border:none;
-
-    border-radius:8px;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+    padding: 15px 35px;
+    background: var(--cor_secundaria);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
 }
 
 .botoes button:hover{
